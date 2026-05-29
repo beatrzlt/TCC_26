@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 360px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #ddd;
+}
+
+.topo {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #eee;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0d1b57;
+}
+
+.logo span {
+  color: #a6a6a6;
+  font-weight: normal;
+}
+
+.conteudo {
+  padding: 20px;
+}
+
+.titulo {
+  font-size: 40px;
+  color: #0d1b57;
+  text-align: center;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.lista {
+  border-top: 2px solid #eee;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 2px solid #eee;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status {
+  font-size: 13px;
+  color: gray;
+  font-weight: normal;
+}
+
+.feito {
+  color: #0d1b57;
+}
+
+.nao-feito {
+  color: #0d1b57;
+}
+
+.cinza {
+  color: #bfbfbf;
+}
+
+.botao {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  background: #0d1b57;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.pesquisa {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.pesquisa input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.pesquisa button {
+  padding: 10px;
+  border: 2px solid #ccc;
+  background: #0d1b57;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.aba {
+  text-align: center;
+  background: #e6e6e6;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.lista-cursos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.curso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nome {
+  width: 70px;
+  font-weight: bold;
+  color: #0d1b57;
+}
+
+.tempo {
+  font-size: 12px;
+  color: gray;
+  width: 60px;
+  text-align: right;
+}
+
+.barra {
+  flex: 1;
+  height: 12px;
+  background: #e6e6e6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progresso {
+  height: 100%;
+  background: #caa200;
+  border-radius: 20px;
+}
