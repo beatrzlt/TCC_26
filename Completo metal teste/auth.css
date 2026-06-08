@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Barlow:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #002060;
+  --gold: #c59b27;
+  --gold-lt: #e0b840;
+  --silver: #dcdcdc;
+  --dark: #0d0d0d;
+  --dark2: #1a1a1a;
+  --dark3: #242424;
+  --dark4: #2e2e2e;
+  --red: #e24b4a;
+  --green: #4caf50;
+  --text-muted: #777;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--silver);
+  color: var(--silver);
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+/* ── Layout duas colunas ─────────────────────────────────────────*/
+.auth-wrap {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Coluna esquerda (decorativa) */
+.auth-side {
+  width: 42%;
+  background: linear-gradient(160deg, var(--navy) 0%, #001040 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ornamento geométrico */
+.auth-side::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(197, 155, 39, .15);
+  border-radius: 50%;
+  top: -80px;
+  right: -120px;
+}
+
+.auth-side::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(197, 155, 39, .1);
+  border-radius: 50%;
+  bottom: -60px;
+  left: -60px;
+}
+
+.auth-side-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--silver);
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.auth-logo span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.auth-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.auth-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-feat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .92rem;
+  color: rgba(220, 220, 220, .75);
+}
+
+.auth-feat i {
+  font-size: 1.2rem;
+  color: var(--gold);
+  width: 28px;
+  text-align: center;
+}
+
+/* Coluna direita (formulário) */
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: var(--silver);
+  overflow-y: auto;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card-wide {
+  max-width: 680px;
+}
+
+.auth-card-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: none;
+  /* só aparece em mobile */
+}
+
+.auth-card-logo span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.auth-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.auth-sub {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* ── Alertas ────────────────────────────────────────────────────── */
+.auth-alert {
+  padding: 11px 14px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+  font-size: .85rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.auth-alert i {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 1rem;
+}
+
+.auth-alert-error {
+  background: rgba(226, 75, 74, .1);
+  border: 1px solid rgba(226, 75, 74, .35);
+  color: #f08080;
+}
+
+.auth-alert-success {
+  background: rgba(76, 175, 80, .1);
+  border: 1px solid rgba(76, 175, 80, .35);
+  color: var(--green);
+}
+
+/* ── Campos ─────────────────────────────────────────────────────── */
+.auth-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-full {
+  grid-column: 1 / -1;
+}
+
+.auth-label {
+  font-size: .72rem;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.auth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-link-sm {
+  font-size: .75rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.auth-link-sm:hover {
+  color: var(--gold-lt);
+}
+
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-wrap>i:first-child {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  font-size: .95rem;
+  pointer-events: none;
+}
+
+.auth-input-wrap input,
+.auth-input-wrap select {
+  width: 100%;
+  padding: 11px 14px 11px 36px;
+  background: var(--dark3);
+  border: 1px solid var(--dark4);
+  border-radius: 9px;
+  color: var(--silver);
+  font-family: 'Barlow', sans-serif;
+  font-size: .9rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.auth-input-wrap input:focus,
+.auth-input-wrap select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(197, 155, 39, .15);
+}
+
+.auth-input-wrap input::placeholder {
+  color: #555;
+}
+
+.auth-input-wrap select option {
+  background: var(--dark3);
+}
+
+/* Botão olho */
+.eye-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: .95rem;
+  padding: 2px;
+}
+
+.eye-toggle:hover {
+  color: var(--gold);
+}
+
+/* Campos sem ícone esquerdo (select inline) */
+.auth-input-wrap select {
+  padding-left: 36px;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ── Força da senha ──────────────────────────────────────────────── */
+.pwd-strength {
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 6px;
+  transition: .3s;
+}
+
+.pwd-hint {
+  font-size: .75rem;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+/* ── Botão principal ─────────────────────────────────────────────── */
+.auth-btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--gold-lt);
+  color: var(--navy);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  transition: background .2s, transform .15s;
+}
+
+.auth-btn:hover {
+  background: var(--gold);
+  transform: translateY(-1px);
+}
+
+.auth-btn:active {
+  transform: translateY(0);
+}
+
+.auth-btn i {
+  font-size: 1.1rem;
+}
+
+/* ── Rodapé do card ──────────────────────────────────────────────── */
+.auth-switch {
+  text-align: center;
+  margin-top: 22px;
+  font-size: .85rem;
+  color: var(--text-muted);
+}
+
+.auth-link {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.auth-link:hover {
+  color: var(--gold-lt);
+}
+
+/* ── Responsivo ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .auth-side {
+    display: none;
+  }
+
+  .auth-card-logo {
+    display: block;
+  }
+
+  .auth-grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-full {
+    grid-column: 1;
+  }
+}
